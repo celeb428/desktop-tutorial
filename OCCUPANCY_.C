@@ -1,0 +1,35 @@
+//
+/*
+NAME:caleb ngugi mburu
+REG:CT100/G/26188/25
+DESCRIPTION:OCCUPANCY
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int occupancy[5][10];
+    int i, j, occupied, vacant;
+
+    srand(time(0)); 
+
+    printf("=== Room Occupancy for One Branch ===\n");
+
+    
+    for (i = 0; i < 5; i++) {
+        occupied = 0;
+        vacant = 0;
+        for (j = 0; j < 10; j++) {
+            occupancy[i][j] = rand() % 2; 
+            if (occupancy[i][j] == 1)
+                occupied++;
+            else
+                vacant++;
+        }
+        printf("Floor %d -> Occupied: %d | Vacant: %d\n", i + 1, occupied, vacant);
+    }
+
+    return 0;
+}
